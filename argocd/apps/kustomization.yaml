@@ -1,5 +1,0 @@
-resources:
-  - dev/nginx.yaml
-  - dev/redis.yaml
-  - prd/nginx.yaml
-  - prd/redis.yaml
