@@ -1,6 +1,11 @@
 resources:
   - ../../base
-  - service.yaml
 
 namespace: nginx
 namePrefix: prd-
+
+patches:
+  - path: service.yaml
+    target:
+      kind: Service
+      name: nginx-service
