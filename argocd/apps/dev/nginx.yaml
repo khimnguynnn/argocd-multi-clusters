@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/khimnguynnn/argocd-multi-clusters.git
+    targetRevision: main
+    path: kustomize/nginx/overlays/dev
+  destination:
+    server: https://hcp-a4d95b52-666d-45fc-af4f-0cb16995cc44.spot.rackspace.com
+    namespace: nginx
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
