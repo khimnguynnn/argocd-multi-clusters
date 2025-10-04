@@ -8,4 +8,4 @@ patches:
   - path: service.yaml
     target:
       kind: Service
-      name: nginx-service
+      name: prd-nginx-service
