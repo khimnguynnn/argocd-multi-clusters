@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/khimnguynnn/argocd-multi-clusters.git
+    targetRevision: HEAD
+    path: argocd/apps
+  destination:
+    server: https://kubernetes.default.svc
